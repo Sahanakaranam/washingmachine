@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean class="com.xworkz.washingmachine.Power" id="power">
+		<constructor-arg value="true"></constructor-arg>
+	</bean>
+
+	<bean class="com.xworkz.washingmachine.Motor" id="motor">
+		<property name="warrantyPeriod" value="2"></property>
+	</bean>
+
+	<bean class="com.xworkz.washingmachine.WashingMachine"
+		id="washingMachine">
+		<property name="companyName" value="lg"></property>
+		<property name="capacity" value="2"></property>
+		<property name="motor" ref="motor"></property>
+		<property name="pow" ref="power"></property>
+	</bean>
+
+
+
+</beans>
